@@ -64,9 +64,10 @@ The microcontroller (an ATmega) is positioned underneath the label.
 In the bottom left is the power connector where the batteries will be attached to.
 
 \section{Building the thing}
-The only actuators needed were two brushless DC motors.
+My "robot" is just a a wooden board with three wheels attached to it, two at the front and one in the back.
+The front wheels are powered via two brushless DC motors:
 \begin{figure}[h!]
-\includegraphics[trim={0cm 0cm 0cm 0cm}, clip, width=3in]{./media/motor.jpg}
+\includegraphics[trim={5cm 30cm 25cm 10cm}, clip, width=3in, height=3in]{./media/motor.jpg}
 \end{figure}
 Each motor requires a current of 0.5 amps and a voltage of at least 6V.
 However, the Arduino Uno is only capable to providing 0.4 amps and 5 volts.
@@ -81,6 +82,14 @@ Motor Driver:
 source: http://www.mcmanis.com/chuck/robotics/tutorial/h-bridge/images/basic-bridge.gif
 \end{figure}
 Basically, the Driver is is arranged like an H-Bridge. When the switch is turned on (supplying 5V to Arduino), pin 2 will close, causing the motor to rotate clockwise. Similarly, when the switch is turned off (by supplying 0V), pin 3 will close and the motor will rotate in the opposite direction.
+The configuration then looks something like this:
+\begin{figure}[h!]
+\includegraphics[trim={0cm 0cm 0cm 0cm}, clip, width=3in]{./media/motorControls.jpg}
+\end{figure}
+Now all that's left to do is define some simple functions to make it move in a certain direction, eg.
+\begin{figure}[h!]
+\includegraphics[trim={0cm 0cm 0cm 0cm}, clip, width=3in]{./media/goLeft.jpg}
+\end{figure}
 
 \section{Obstacle Avoidance}
 The robot uses a sonar to detect obstacles. 
